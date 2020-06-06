@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  tpkutils:
+    image: tpkutils
+    build:
+      context: .
+      dockerfile: Dockerfile.aws
+    ports:
+      - 5000:5000
+    volumes: 
+      - ./:/app
+    command: mv /build/package.zip /app/package.zip
