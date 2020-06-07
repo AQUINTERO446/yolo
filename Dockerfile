@@ -3,7 +3,7 @@ ARG build_image="ubuntu:18.04"
 ARG app_image="ubuntu:18.04"
 
 # Build image
-FROM ${build_image} AS build
+FROM ${build_image}
 RUN apt-get update
 RUN apt-get install -y build-essential git
 
@@ -38,10 +38,10 @@ RUN apt-get update && \
 
 # Get darknet from build image
 WORKDIR /app
-COPY --from=build /src/darknet/libdarknet.so .
-COPY --from=build /src/darknet/build/darknet/x64/darknet.py .
-COPY --from=build /src/darknet/cfg data/
-COPY --from=build /src/darknet/data data/
+COPY --from=0 /src/darknet/libdarknet.so .
+COPY --from=0 /src/darknet/build/darknet/x64/darknet.py .
+COPY --from=0 /src/darknet/cfg data/
+COPY --from=0 /src/darknet/data data/
 
 # Install api
 COPY requirements.txt .
