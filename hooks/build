@@ -3,18 +3,21 @@ set -ex
 
 # Base builds
 docker build -t $DOCKER_REPO:1.0-yolov3_coco \
+	-f ./Dockerfile.dev \
 	--build-arg weights_file="yolov3.weights" \
 	--build-arg config_file="data/yolov3.cfg" \
 	--build-arg meta_file="data/coco.data" \
        	. 
 
 docker build -t $DOCKER_REPO:1.0-yolov3_openimages \
+	-f ./Dockerfile.dev \
 	--build-arg weights_file="yolov3-openimages.weights" \
 	--build-arg config_file="data/yolov3-openimages.cfg" \
 	--build-arg meta_file="data/openimages.data" \
        	. 
 
 docker build -t $DOCKER_REPO:1.0-yolo9000 \
+	-f ./Dockerfile.dev \
 	--build-arg weights_file="yolo9000.weights" \
 	--build-arg config_file="data/yolo9000.cfg" \
 	--build-arg meta_file="data/combine9k.data" \
