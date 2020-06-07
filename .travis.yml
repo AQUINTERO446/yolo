@@ -10,3 +10,5 @@ before_install:
 script:
   - bash test.sh
 
+after_success:
+  - bash hooks/push

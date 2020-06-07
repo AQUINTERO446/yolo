@@ -1,6 +1,7 @@
 #!/bin/bash
 set -ex
 
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 docker push $DOCKER_REPO:1.0-yolov3_coco
 docker push $DOCKER_REPO:1.0-yolov3_openimages
 docker push $DOCKER_REPO:1.0-yolo9000
