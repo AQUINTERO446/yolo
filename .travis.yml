@@ -12,3 +12,17 @@ script:
 
 after_success:
   - bash hooks/push
+
+
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "object-detection"
+  env: "ObjectDetection-env"
+  bucket_name: "elasticbeanstalk-us-east-2-381560538190"
+  bucket_path: "object-detection"
+  on:
+      branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
