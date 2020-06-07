@@ -59,5 +59,5 @@ ENV meta_file=${meta_file}
 
 # Download trained weights for model:
 RUN wget https://pjreddie.com/media/files/${weights_file}
-
+EXPOSE 80
 CMD ["python3", "app.py"]
