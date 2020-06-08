@@ -58,6 +58,7 @@ ENV config_file=${config_file}
 ENV meta_file=${meta_file}
 
 # Download trained weights for model:
-RUN wget https://pjreddie.com/media/files/${weights_file}
+RUN wget https://pretrained-ia-models.s3.us-east-2.amazonaws.com/${weights_file}
+
 EXPOSE 80
 CMD ["python3", "app.py"]
