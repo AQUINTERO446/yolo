@@ -17,10 +17,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "object-detection-yolo"
-  env: "ObjectDetectionYolo-env"
+  app: "yolo"
+  env: "Yolo-env"
   bucket_name: "elasticbeanstalk-us-east-2-381560538190"
-  bucket_path: "object-detection-yolo"
+  bucket_path: "yolo"
   on:
       branch: master
   access_key_id: $AWS_ACCESS_KEY

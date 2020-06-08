@@ -1,7 +1,8 @@
 {
     "AWSEBDockerrunVersion": 1,
     "Image": {
-        "Name": "aquintero446/yolo_service:1.0-yolo9000"
+        "Name": "aquintero446/yolo_service:1.0-yolo9000",
+        "Update": "true"
       },
       "Ports": [
         {
