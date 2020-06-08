@@ -5,5 +5,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
+      args:
+        weights_file: yolo9000.weights
+        config_file: data/yolo9000.cfg
+        meta_file: data/combine9k.data
+    volumes:
+      - ./app.py:/app/app.py
     ports:
       - 8080:80
