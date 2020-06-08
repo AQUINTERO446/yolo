@@ -52,5 +52,5 @@ ENV meta_file=data/combine9k.data
 
 # Download trained weights for model:
 RUN wget https://pjreddie.com/media/files/yolo9000.weights
-EXPOSE 8080
+EXPOSE 80
 CMD ["python3", "app.py"]
