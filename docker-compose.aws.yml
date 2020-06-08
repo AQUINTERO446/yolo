@@ -1,13 +1,9 @@
 version: '3.4'
 
 services:
-  tpkutils:
-    image: tpkutils
+  yolo_service:
     build:
       context: .
-      dockerfile: Dockerfile.aws
+      dockerfile: Dockerfile
     ports:
-      - 5000:5000
-    volumes: 
-      - ./:/app
-    command: mv /build/package.zip /app/package.zip
+      - 80:8080

@@ -5,7 +5,8 @@
       },
       "Ports": [
         {
-          "ContainerPort": "80"
+          "ContainerPort": 8080,
+          "HostPort": 80
         }
       ]
 }

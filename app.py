@@ -64,4 +64,4 @@ app.add_api('swagger.yaml')
 
 if __name__ == '__main__':
     signal.signal(signal.SIGTERM, sigterm_handler)
-    app.run(port=80, server='gevent')
+    app.run(port=8080, server='gevent')
