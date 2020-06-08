@@ -9,7 +9,7 @@ produces:
 paths:
   /health:
     get:
-      operationId: app.detect_from_url
+      operationId: app.health
       summary: Perform health check over server container.
       responses:
         200:
