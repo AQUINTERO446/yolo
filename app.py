@@ -11,6 +11,9 @@ def sigterm_handler(_signo, _stack_frame):
     print('Sigterm caught - closing down')
     sys.exit()
 
+def health():
+    return 'OK', 200
+
 def detect(filename, threshold):
     r = darknet.detect(net, meta, bytes(filename, "ascii"), threshold)
     # Class label needs to be decoded to ascii in order to not cause issues.
